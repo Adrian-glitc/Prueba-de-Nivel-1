@@ -1,0 +1,34 @@
+class Vehiculo:
+    def __init__(self, velocidad, ruedas, color):
+        self.velocidad = velocidad
+        self.ruedas = ruedas
+        self.color = color
+
+class Camion(Vehiculo):
+    def __init__(self, velocidad, ruedas, color, carga):
+        super().__init__(velocidad, ruedas, color)
+        self.carga = carga
+
+    def mostrar_atributos(self):
+        print(f"Velocidad: {self.velocidad} km/h")
+        print(f"Ruedas: {self.ruedas}")
+        print(f"Color: {self.color}")
+        print(f"Carga: {self.carga} kg")
+        
+    def cargar(self):
+        print("El camión está cargado.")
+        self.carga = True
+
+    def descargar(self):
+        print("El camión está descargado.")
+        self.carga = False
+
+    def arrancar(self):
+        print("El camión está arrancando.")
+
+    def frenar(self):
+        print("El camión está frenando.")
+    
+    def catalogar(self, vehiculos):
+        for vehiculo in vehiculos:
+            print(type(vehiculo).__name__,vehiculo)

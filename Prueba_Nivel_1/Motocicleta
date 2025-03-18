@@ -1,0 +1,27 @@
+class Vehiculo:
+    def __init__(self, ruedas, color, velocidad, cilindradas):
+        self.ruedas = ruedas
+        self.color = color
+        self.velocidad = velocidad
+        self.cilindradas = cilindradas
+
+class Motocicleta(Vehiculo):
+    def __init__(self, color, velocidad, cilindradas):
+        super().__init__(2, color, velocidad, cilindradas)
+        self.imprimir_atributos()
+    def arrancar(self):
+        print("La motocicleta está arrancando.")
+
+    def frenar(self):
+        print("La motocicleta está frenando.")
+
+
+    def imprimir_atributos(self):
+        print(f"Ruedas: {self.ruedas}")
+        print(f"Color: {self.color}")
+        print(f"Velocidad: {self.velocidad} km/h")
+        print(f"Cilindradas: {self.cilindradas} cc")
+        
+    def catalogar(self, vehiculos):
+        for vehiculo in vehiculos:
+            print(type(vehiculo).__name__,vehiculo)

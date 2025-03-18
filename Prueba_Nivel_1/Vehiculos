@@ -1,0 +1,37 @@
+class Vehiculo:
+    def __init__(self, color, ruedas):
+        self.color = color
+        self.ruedas = ruedas
+
+    def __str__(self):
+        return f'Vehículo de color {self.color} con {self.ruedas} ruedas'
+
+
+class Vehiculo:
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+
+class Camion(Vehiculo):
+    def __init__(self, marca, modelo, capacidad_carga):
+        super().__init__(marca, modelo)
+        self.capacidad_carga = capacidad_carga
+
+class Coche(Vehiculo):
+    def __init__(self, marca, modelo, num_puertas):
+        super().__init__(marca, modelo)
+        self.num_puertas = num_puertas
+
+class Bicicleta(Vehiculo):
+    def __init__(self, marca, modelo, tipo):
+        super().__init__(marca, modelo)
+        self.tipo = tipo
+
+class Motocicleta(Vehiculo):
+    def __init__(self, marca, modelo, cilindrada):
+        super().__init__(marca, modelo)
+        self.cilindrada = cilindrada
+ 
+    def catalogar(self, vehiculos):
+        for vehiculo in vehiculos:
+            print(type(vehiculo).__name__,vehiculo)

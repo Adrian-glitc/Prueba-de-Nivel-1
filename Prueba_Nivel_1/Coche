@@ -1,0 +1,17 @@
+class Vehiculo:
+    def __init__(self, ruedas, color):
+        self.ruedas = ruedas
+        self.color = color
+
+class Coche(Vehiculo):
+    def __init__(self, ruedas, color, velocidad, cilindrada):
+        super().__init__(ruedas, color)
+        self.velocidad = velocidad
+        self.cilindrada = cilindrada
+
+    def __str__(self):
+        return f'Coche: {self.ruedas} ruedas, color {self.color}, velocidad {self.velocidad} km/h, cilindrada {self.cilindrada} cc'
+
+    def catalogar(self, vehiculos):
+        for vehiculo in vehiculos:
+            print(type(vehiculo).__name__,vehiculo)
